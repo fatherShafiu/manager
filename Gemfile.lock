@@ -301,7 +301,7 @@ DEPENDENCIES
   rails-controller-testing
   redis (~> 4.0)
   rolify
-  rspec-rails
+  rspec-rails (~> 4.0.1)
   sass-rails (>= 6)
   sidekiq
   simplecov
