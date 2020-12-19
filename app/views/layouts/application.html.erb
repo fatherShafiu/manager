@@ -15,7 +15,8 @@
      <div class="wrapper"> 
     <%= render partial: "layouts/header" %> 
      <%= render partial: "layouts/sidebar" %> 
-     <div class="content-wrapper"> 
+     <div class="content-wrapper">
+     <%= flash_messages %> 
      <%= yield %> 
       </div> 
     <%= render partial: "layouts/footer" %>
