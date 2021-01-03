@@ -1,0 +1,53 @@
+<div class="content-header"> 
+<div class="container-fluid"> 
+<div class="row mb-2"> 
+<div class="col-sm-6"> 
+<h1 class="m-0 text-dark">Users</h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+<section class="content"> 
+<div class="container-fluid"> 
+<div class="row"> 
+<div class="col-lg-12"> 
+<div class="card"> 
+<%= form_with(model: @user, url: account_user_path(@user), id: 'edit_user', html: {class: 'form-horizontal'}) do |f| %> 
+<div class="card-header"> 
+<h3 class="card-title">  Edit User Information  </h3> 
+</div> 
+<div class="card-body"> 
+<% if @user.errors.any? %> 
+<div class="alert alert-error alert-block alert-fixed"> 
+<h4> 
+<%= "#{pluralize(@user.errors.count, 'error')}" %> 
+</h4> 
+<%= @user.errors.full_messages.map{|msg| content_tag(:li, msg)}.join %> 
+</div> 
+<% end %> 
+<%= label_tag 'user[name]', 'Name', class: 'control-label col-lg-2' %> 
+<div class="col-lg-10"> 
+<%= f.text_field :name, {placeholder: "Name", autofocus: true, class: "form-control"} %> 
+</div> 
+<%= label_tag 'user[email]', 'Email', class: 'control-label col-lg-2'%> 
+<div class="col-lg-10"> 
+<%= f.email_field :email, {placeholder: "Email Address", class: "form-control"} %> 
+</div> 
+<%= label_tag "user[role]", "Role", class: 'control-label col-lg-2' %> 
+<div class="col-lg-10"> 
+<%= select_tag "user[role]", options_for_select(@choices, 'user'), class: 'form-control' %> 
+</div> 
+</div> 
+<div class="card-footer" style="height: 55px;"> 
+<span class="pull-right"> 
+<%= f.submit "Edit User", class: "btn btn-primary" %> 
+</span> 
+</div> 
+<% end %> 
+</div> 
+</div> 
+</div> 
+</div>  
+</section>
+
+

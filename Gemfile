@@ -28,7 +28,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'capybara' 
   gem 'simplecov', :require => false, :group => :test 
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails', '~> 6.1'
+  gem 'webdrivers'
 
 end
 

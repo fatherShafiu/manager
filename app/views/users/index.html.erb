@@ -1,0 +1,62 @@
+[<div class="content-header"> 
+<div class="container-fluid"> 
+<div class="row mb-2"> 
+<div class="col-sm-6"> 
+<h1 class="m-0 text-dark">Users</h1> 
+</div> 
+</div> 
+</div> 
+</div> 
+<section class="content"> 
+<div class="container-fluid"> 
+<div class="row"> 
+<div class="col-lg-12">
+<div class="card">
+<div class="card-header"> 
+<h3 class="card-title"> 
+<%= "Users in #{current_account.name}" %> 
+</h3> 
+</div> 
+<div class="card-body"> 
+<div class="table-responsive"> 
+<table class="table table-striped"> 
+<thead> 
+<tr> 
+<th>Name</th> 
+<th>Email</th> 
+<th>Status</th> 
+<th>Role</th> 
+<th>Added at</th> 
+<th></th> 
+</tr> 
+</thead> 
+<tbody> 
+<% @users.each do |user|%> 
+<tr> 37 <td><%= user.name %></td> 
+<td><%= user.email %></td> 
+<td><%= user.accepted_or_not_invited? ? "Active" : "Invited" % ></td> 
+<td><%= user.roles&.first&.name&.capitalize %></td> 
+<td><%= user.created_at.strftime('%D') %></td> 
+<td> 44 
+<%= link_to 'Edit', edit_account_user_path(user), class: 'bt\ 45 n btn-default btn-xs' %> 
+<%= link_to 'Destroy', account_user_path(user), {method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning btn-xs'} 
+unless user.id == current_user.id %> 
+</td> 
+</tr> 
+<% end %> 
+</tbody> 
+</table>
+</div>  
+</div> 
+<div class="card-footer" style="height: 55px;"> 
+<span class="pull-right"> 
+<a class="btn btn-primary" href="<%= new_account_user_path %>">
+Add User 
+</a> 
+</span> 
+</div>
+</div> 
+</div> 
+</div> 
+</div> 
+</section>
