@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
-
-gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+ruby '3.1.2'
+gem 'rails', '~> 7.0', '>= 7.0.4'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
@@ -58,3 +57,5 @@ gem 'gravatar_image_tag'
 gem 'money-rails' 
 gem 'slack-notifier'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'importmap-rails', '~> 1.1', '>= 1.1.5'
+gem 'psych', '< 4'
