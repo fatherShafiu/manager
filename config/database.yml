@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: standup_app_development
+  database: manager
   username: postgres
   password: 3pyntl4
 
